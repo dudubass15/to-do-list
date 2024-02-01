@@ -1,15 +1,21 @@
 <section class="app">
   <div class="container">
+    <h1>My to-do list</h1>
     <form>
-      <label for="descricao">Descrição:</label>
-      <input #description type="text" name="descricao" id="descricao">
-      <button type="button" (click)="set(description.value)">Salvar</button>
+      <label for="descricao">Descreva sua tarefa no campo abaixo ...</label>
+      <input #description type="text" name="descricao" id="descricao" (input)="observableField($event)">
+      <button type="button" (click)="set(description.value)" [disabled]="field.length > 0 ? false : true">Salvar</button>
     </form>
-    <ul>
+    <p *ngIf="list && list.length > 0" class="quantidade">Quantidade: <span>{{list.length}}</span></p>
+    <ul *ngIf="list && list.length > 0">
       <ng-container *ngFor="let item of list">
-        <li>{{item}}</li>
+        <li>
+          <span>{{item.description}}</span>
+          <button type="button" (click)="delete(item.id)">Deletar</button>
+        </li>
       </ng-container>
     </ul>
+    <span *ngIf="list && list.length < 1" class="alert">Nenhuma tarefa na lista ...</span>
   </div>
 </section>
 <!-- <router-outlet></router-outlet> -->
