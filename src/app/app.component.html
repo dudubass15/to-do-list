@@ -1,0 +1,16 @@
+<section class="app">
+  <div class="container">
+    <form>
+      <label for="descricao">Descrição:</label>
+      <input #description type="text" name="descricao" id="descricao">
+      <button type="button" (click)="set(description.value)">Salvar</button>
+    </form>
+    <ul>
+      <ng-container *ngFor="let item of list">
+        <li>{{item}}</li>
+      </ng-container>
+    </ul>
+  </div>
+</section>
+<!-- <router-outlet></router-outlet> -->
+
