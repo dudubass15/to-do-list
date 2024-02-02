@@ -1,10 +1,15 @@
 <section class="app">
   <div class="container">
-    <h1>My to-do list</h1>
+    <div class="header">
+      <h1>My to-do list</h1>
+      <button *ngIf="list && list.length > 0" type="button" (click)="newList()" class="btn-nova-lista">
+        <span>Criar nova lista</span>
+      </button>
+    </div>
     <form>
       <label for="descricao">Descreva sua tarefa no campo abaixo ...</label>
       <input #description type="text" name="descricao" id="descricao" (input)="observableField($event)">
-      <button type="button" (click)="set(description.value)" [disabled]="field.length > 0 ? false : true">Salvar</button>
+      <button type="button" (click)="set(description.value)" [disabled]="field.length > 0 ? false : true">Adicionar</button>
     </form>
     <p *ngIf="list && list.length > 0" class="quantidade">Quantidade: <span>{{list.length}}</span></p>
     <ul *ngIf="list && list.length > 0">
@@ -23,5 +28,3 @@
     <span *ngIf="list && list.length < 1" class="alert">Nenhuma tarefa na lista ...</span>
   </div>
 </section>
-<!-- <router-outlet></router-outlet> -->
-

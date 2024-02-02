@@ -12,17 +12,20 @@ export class AppComponent {
 
   public title = 'to-do-list';
 
-  public list: ItemInterface[] = [
-    {
-      id: 0,
-      description: 'Teste123',
-      isChecked: false
-    }
-  ];
+  public list: ItemInterface[] = [];
 
   public field: string = '';
 
   public constructor() {}
+
+  public newList(): void {
+    if (this.list.length > 0) {
+      const confirmUser = confirm('Tem certeza que deseja apagar lista atual e criar uma nova?');
+      if (confirmUser) {
+        this.list = [];
+      }
+    }
+  }
 
   public observableField(e: any): void {
     this.field = e.target.value;
