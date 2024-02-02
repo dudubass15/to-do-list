@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ItemInterface } from './interfaces/item.interface';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,13 @@ export class AppComponent {
 
   public title = 'to-do-list';
 
-  public list: {id: number, description: string}[] = [];
+  public list: ItemInterface[] = [
+    {
+      id: 0,
+      description: 'Teste123',
+      isChecked: false
+    }
+  ];
 
   public field: string = '';
 
@@ -21,13 +28,17 @@ export class AppComponent {
     this.field = e.target.value;
   }
 
+  public checked(item: ItemInterface): void {
+    item.isChecked = !item.isChecked;
+  }
+
   public set(value: string): void {
     if (value.length < 1) return;
     if (this.isDuplicated(value)) {
       alert('Tarefa já registrada!');
       return;
     }
-    this.list.push({ id: this.list.length + 1, description: value });
+    this.list.push({ id: this.list.length + 1, description: value, isChecked: false });
     this.clearField();
   }
 
@@ -48,7 +59,7 @@ export class AppComponent {
     }
   }
 
-  public searchItem(id: number): {id: number, description: string}[] | [] {
+  public searchItem(id: number): ItemInterface[] | [] {
     if (this.list.length < 1) return [];
     return this.list.filter((item) => item.id === id);
   }

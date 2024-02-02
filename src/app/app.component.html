@@ -10,8 +10,13 @@
     <ul *ngIf="list && list.length > 0">
       <ng-container *ngFor="let item of list">
         <li>
-          <span>{{item.description}}</span>
-          <button type="button" (click)="delete(item.id)">Deletar</button>
+          <div class="text">
+            <input type="checkbox" id="checkbox--{{item.id}}" (click)="checked(item)">
+            <label for="checkbox--{{item.id}}" [ngClass]="{'isChecked': item.isChecked}">{{item.description}}</label>
+          </div>
+          <button type="button" (click)="delete(item.id)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
         </li>
       </ng-container>
     </ul>
