@@ -12,19 +12,21 @@
       <button type="button" (click)="set(description.value)" [disabled]="field.length > 0 ? false : true">Adicionar</button>
     </form>
     <p *ngIf="list && list.length > 0" class="quantidade">Quantidade: <span>{{list.length}}</span></p>
-    <ul *ngIf="list && list.length > 0">
-      <ng-container *ngFor="let item of list">
-        <li>
-          <div class="text">
-            <input type="checkbox" id="checkbox--{{item.id}}" (click)="checked(item)">
-            <label for="checkbox--{{item.id}}" [ngClass]="{'isChecked': item.isChecked}">{{item.description}}</label>
-          </div>
-          <button type="button" (click)="delete(item.id)">
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-          </button>
-        </li>
-      </ng-container>
-    </ul>
-    <span *ngIf="list && list.length < 1" class="alert">Nenhuma tarefa na lista ...</span>
+    <div class="container-list">
+      <ul *ngIf="list && list.length > 0">
+        <ng-container *ngFor="let item of list">
+          <li>
+            <div class="text">
+              <input type="checkbox" id="checkbox--{{item.id}}" [checked]="item.isChecked ? true : false" (click)="checked(item)">
+              <label for="checkbox--{{item.id}}" [ngClass]="{'isChecked': item.isChecked}">{{item.description}}</label>
+            </div>
+            <button type="button" (click)="delete(item.id)">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
+          </li>
+        </ng-container>
+      </ul>
+      <span *ngIf="list && list.length < 1" class="alert">Nenhuma tarefa na lista ...</span>
+    </div>
   </div>
 </section>

@@ -100,59 +100,71 @@
       margin-bottom: 10px;
     }
 
-    ul {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+    .container-list {
       width: 100%;
-      height: auto;
-      background-color: blanchedalmond;
-      padding: 10px;
+      height: 100%;
+      max-height: 250px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding-bottom: 10px;
       border-radius: 3px;
+      background-color: transparent;
 
-      li {
-        width: 100%;
+      ul {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        color: #000;
-        padding: 15px 6px;
-        border-top: 1px solid #00000012;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        height: auto;
+        background-color: blanchedalmond;
+        padding: 10px;
+        border-radius: 3px;
 
-        &:first-child {
-          border-top: 0px;
-        }
-
-        .text {
+        li {
+          width: 100%;
           display: flex;
           flex-direction: row;
-          column-gap: 10px;
+          justify-content: space-between;
           align-items: center;
-          width: 100%;
+          color: #000;
+          padding: 15px 6px;
+          border-top: 1px solid #00000012;
 
-          label {
+          &:first-child {
+            border-top: 0px;
+          }
+
+          .text {
+            display: flex;
+            flex-direction: row;
+            column-gap: 10px;
+            align-items: center;
             width: 100%;
+
+            label {
+              width: 100%;
+              cursor: pointer;
+            }
+
+            .isChecked {
+              text-decoration: line-through;
+            }
+          }
+
+          button {
+            border: none;
+            outline: none;
+            background-color: transparent;
             cursor: pointer;
-          }
 
-          .isChecked {
-            text-decoration: line-through;
-          }
-        }
-
-        button {
-          border: none;
-          outline: none;
-          background-color: transparent;
-          cursor: pointer;
-
-          i {
-            font-size: 20px;
+            i {
+              font-size: 20px;
+            }
           }
         }
       }
     }
+
 
     .alert {
       display: flex;
@@ -173,7 +185,7 @@
     .container {
       width: 100%;
       max-width: 100%;
-      padding: 0px;
+      padding: 0px 10px;
 
       .header {
         display: flex;
