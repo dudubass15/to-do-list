@@ -1,0 +1,9 @@
+version: "3.1"
+
+services:
+  todo-list:
+    container_name: 3_todolist
+    build: .
+    restart: always
+    ports:
+      - 8083:80
