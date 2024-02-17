@@ -1,27 +1,16 @@
-# ToDoList
+# To-do list
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+Projeto feito apenas para práticar alguns conceitos aprendidos nos meus estudos diários.
 
-## Development server
+O projeto em si é uma lista de tarefas, onde o usuário poderá cadastrar vários itens no seu dia a dia e usar como lembrete de suas obrigações e a fazeres.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Screenshots
 
-## Code scaffolding
+![](./src/assets/images/1.png)
+![](./src/assets/images/2.png)
+![](./src/assets/images/3.png)
+![](./src/assets/images/4.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Link para acesso
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[https://to-do.carloseduardo.dev](https://to-do.carloseduardo.dev)
